@@ -1,0 +1,39 @@
+@import '../../assets/stylus/_settings.styl'
+
+
+.loginWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  background-image url(image_path+'loginPage.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height:100vh;
+}
+
+.loginBox{
+  width 500px;
+  background: #fff;
+  padding: 41px;
+  border: #87888a solid 1.5px;
+  border-radius: 12px;
+  -webkit-box-shadow: inset 0px 0px 46px 0px rgba(9,12,15,1);
+  -moz-box-shadow: inset 0px 0px 46px 0px rgba(9,12,15,1);
+  box-shadow: inset 0px 0px 46px 0px rgba(9,12,15,1);
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.no-style .ng-valid {
+  border-left: 1px  solid #CCC
+}
+
+.no-style .ng-invalid {
+  border-left: 1px  solid #CCC
+}
