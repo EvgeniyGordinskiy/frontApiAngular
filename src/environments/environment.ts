@@ -3,6 +3,12 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
+import { HttpHeaders } from '@angular/common/http';
 export const environment = {
-  production: false
+  production: false,
+  //----- URL -----
+  AUTH_URL: 'http://rest/auth/login',
+  HTTP_OPTIONS: {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  }
 };

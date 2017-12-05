@@ -1,3 +1,7 @@
+@import './_form.styl'
+@import './_helpers.styl'
+@import './_settings.styl'
+
 .alert{
   color red;
 }
@@ -16,6 +20,22 @@ body {
 body, input[text], button {
   color: #888;
   font-family: Cambria, Georgia;
+}
+
+footer{
+  color: #fff;
+  display: block;
+  font-size:12px;
+  height: footer_height
+  background:primary-color;
+  .footer-content{
+    font-size:14px;
+    padding-top: 16px;
+    color:#FFF;
+    justify-content: center;
+    width: 150px
+    margin-left: calc((100% - 54px) / 2);
+  }
 }
 
 h1 {
@@ -74,3 +94,4 @@ nav a.active {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+

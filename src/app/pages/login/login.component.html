@@ -1,4 +1,3 @@
-
 <div class="loginWrapper">
     <div class="loginBox">
       <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
@@ -17,7 +16,12 @@
         <div class="form-group">
           <label for="alterEgo">Email</label>
           <input type="email" class="form-control" id="alterEgo"
+                 required
                  [(ngModel)]="model.params.email.value" name="alterEgo">
+          <div [hidden]="name.valid || name.pristine"
+               class="alert alert-danger">
+            Email is required
+          </div>
         </div>
 
         <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>

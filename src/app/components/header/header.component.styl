@@ -1,0 +1,38 @@
+@import './../../../assets/stylus/_settings'
+
+.top-header {
+  background: primary-color none repeat scroll 0 0;
+  color: text-light-color;
+  height: header_height
+  width: 100%;
+
+  z-index: 1;
+  justify-content space-between
+
+  .user-details {
+    padding-bottom: 1.5rem;
+    .username {
+      font-size: 1.43rem;
+      text-transform: uppercase;
+      float: left;
+      line-height: 1.43rem;
+      font-family: regular-font;
+      margin-top: 4px;
+      margin-right: 10px;
+    }
+    .username em {
+      font-style: normal !important;
+      font-size: .93rem;
+      padding-top: 6px;
+      text-transform: none;
+      display: block;
+      font-family: light-font;
+      color: #92a8b3;
+      line-height: 1rem;
+    }
+
+  }
+  .top-menu_item {
+    align-self: center;
+  }
+}

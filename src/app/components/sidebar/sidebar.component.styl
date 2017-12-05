@@ -1,0 +1,90 @@
+@import './../../../assets/stylus/_settings'
+
+.sidebar-container{
+  height 100%
+  width: 80px;
+  align-items:  stretch
+}
+.sideMenu{
+  height: 100%;
+  width:sidebar-width-desktop;
+  background:sidebar-bg-color;
+  box-shadow: 1px 0 10px sidebar-shadow-color;
+  text-align center
+  padding-top: 100px;
+  font-size: 13px;
+  z-index: 99;
+  ul{
+    margin-left -46px
+  }
+  li{
+    text-align:center;
+    font-size:0.9rem;
+    font-family:regular-font;
+    padding: 15px 5px !important;
+    list-style-type: none;
+    a{
+      text-decoration:none;
+      display:block;
+    }
+    &:hover, &.is-active{
+      color:text-light-color;
+      background:sidebar-icon-active-color;
+    }
+  }
+}
+
+.side-subMenu{
+  top 0
+  left 0
+  width innersidebar-width-mobile
+  margin-left 'calc((%s * -1) + %s)' % (innersidebar-width-mobile sidebar-width-mobile)
+  background:innersidebar-bg-color;
+  display: inline-block;
+  position absolute
+  height: 100%;
+  z-index: 98;
+  padding:25px;
+  color:text-light-color;
+  overflow:hidden;
+  -webkit-transition-property: all; /* Safari */
+  -webkit-transition-duration: transition-time; /* Safari */
+  transition-property: all;
+  transition-duration: transition-time;
+}
+
+.expanded .side-subMenu{
+  margin-left sidebar-width-mobile
+}
+
+.side-subMenu h4{
+  font-family:bold-font;
+  font-size:1.14rem;
+  margin-top:0px;
+}
+.side-subMenu ul{
+  list-style:none;
+  padding-left:0px;
+}
+.side-subMenu ul a{
+  padding:10px 20px;
+  display:block;
+  color:text-light-color;
+  text-decoration:none;
+}
+.side-subMenu ul a:hover{
+  background:innersidebar-icon-active-color;
+}
+.side-subMenu ul a span{
+  float:right;
+  display:inline-block;
+}
+.side-subMenu hr{
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #245263;
+  margin: 1em 0;
+  padding: 0;
+}
+

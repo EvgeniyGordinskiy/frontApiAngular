@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {Form} from "../_helpers/form/form";
+import {Form} from "../../helpers/form/form";
 
-import {AuthService} from './../auth.service'
+import {LoginService} from '../../services/login/login.service'
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.styl']
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.component.styl']
 })
 export class LoginComponent implements OnInit {
-
   constructor(
-      private authService: AuthService,
+      private loginService: LoginService,
   ) { }
   model = new Form({
     name: {
@@ -27,8 +26,7 @@ export class LoginComponent implements OnInit {
   });
 
   onSubmit() {
-    this.authService.login(this.model)
-        .subscribe(token => console.log(token));
+    this.loginService.handler(this.model)
   }
 
   ngOnInit() {
