@@ -7,12 +7,31 @@ import { ClientsComponent } from './pages/with_navigation/clients/clients.compon
 import { WithNavigationComponent } from './pages/with_navigation/with-navigation.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login',
+    component: LoginComponent
+  },
+  { path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  { path: '',
+    component: WithNavigationComponent,
+    children: [
+      {
+        path: 'clients',
+        component: ClientsComponent
+      },
+      {
+        path: 'dashboard',
+        component: ClientsComponent
+      },
+      {
+        path: 'posts',
+        component: ClientsComponent
+      },
+    ]
+  },
 
-  { path: '', component: WithNavigationComponent, children: [
-  { path: 'clients', component: ClientsComponent },
-  ]},
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({

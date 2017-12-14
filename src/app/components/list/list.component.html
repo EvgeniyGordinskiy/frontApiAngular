@@ -1,0 +1,11 @@
+<div class="clients_preview_list">
+  <div class="client_preview " *ngFor="let item of items;  let i = index" (click)="selectItem(i.toString())">
+    <div class="img_client_preview_conteiner">
+      <div class="img_all_clients" [ngStyle]="{backgroundImage: 'url('+item.general.avatar+')'}"></div>
+    </div>
+    <div class="info_client_preview_conteiner">
+      <p class="name_all_clients">{{item.general.firstName}} {{item.general.lastName}}</p>
+      <p class="name_all_clients">{{item.job.company}}</p>
+    </div>
+  </div>
+</div>

@@ -7,40 +7,42 @@ import { HttpClientModule }    from '@angular/common/http';
 
 
 //----- services -----
+  //--- login ---
 import { LoginService } from './services/login/login.service';
 
-
+  //--- clients ---
+import {
+    GetAllClientsService,
+    CurrentClientService
+} from './services/clients/index'
 
 import { AppComponent } from './app.component';
+
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './pages/login/login.component';
-import { ClientsComponent } from './pages/with_navigation/clients/clients.component';
-import { WithNavigationComponent } from './pages/with_navigation/with-navigation.component';
-import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+
+import { AppDeclarations } from './declarations';
+import { ClientDetailComponent } from './components/client-detail/client-detail.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    ClientsComponent,
-    WithNavigationComponent,
-    UserLayoutComponent,
-    HeaderComponent,
-    SidebarComponent
-  ],
+    AppDeclarations,
+    ClientDetailComponent,
+],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-
   ],
   providers: [
     LoginService,
+    GetAllClientsService,
+    CurrentClientService
   ],
   bootstrap: [AppComponent]
 })

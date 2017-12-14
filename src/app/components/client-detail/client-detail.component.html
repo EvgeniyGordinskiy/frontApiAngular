@@ -1,0 +1,21 @@
+<div class="clients_detail"  *ngIf="client">
+  <div class="client_detail_image" [style.background-image]="'url('+client.general.avatar+')'"></div>
+  <div class="clients_detail_data">
+    <p class="title_client_detail">General</p>
+    <p *ngFor="let item of getKeys(client.general)">
+      <span>{{item}} :</span> {{client.general[item]}}
+    </p>
+    <p class="title_client_detail">Job</p>
+    <p *ngFor="let item of getKeys(client.job)">
+      <span>{{item}} :</span> {{client.job[item]}}
+    </p>
+    <p class="title_client_detail">Contact</p>
+    <p *ngFor="let item of getKeys(client.contact)">
+      <span>{{item}} :</span> {{client.contact[item]}}
+    </p>
+    <p class="title_client_detail">Address</p>
+    <p *ngFor="let item of getKeys(client.address)">
+      <span>{{item}} :</span> {{client.address[item]}}
+    </p>
+  </div>
+</div>
